@@ -1,6 +1,8 @@
 # Created by https://www.gitignore.io/api/node,laravel,phpstorm
 # Edit at https://www.gitignore.io/?templates=node,laravel,phpstorm
 
+### Idea ###
+.idea/
 ### Laravel ###
 /vendor/
 node_modules/
