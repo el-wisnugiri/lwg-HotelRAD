@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRatesTable extends Migration
+class CreateFeedbackSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('rates', function (Blueprint $table) {
+        Schema::create('feedback_subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->decimal('rate')->default(0.00);
-            $table->string('description',48);
+            $table->string('name', 24);
+            $table->string('description', 255);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
@@ -29,6 +29,6 @@ class CreateRatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rates');
+        Schema::dropIfExists('feedback_subjects');
     }
 }
