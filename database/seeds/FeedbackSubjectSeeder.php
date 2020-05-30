@@ -14,7 +14,7 @@ class FeedbackSubjectSeeder extends Seeder
         DB::table('feedback_subjects')->insert(array(
             array(
                 'name' => 'General',
-                'description' => 'General Enquiry/Comments',
+                'description' => 'General Enquiry / Comments',
             ),
             array(
                 'name' => 'Booking',
@@ -22,7 +22,7 @@ class FeedbackSubjectSeeder extends Seeder
             ),
             array(
                 'name' => 'Thank You',
-                'description' => 'Message to thank the hotel/staff',
+                'description' => 'Message to thank the hotel / staff',
             ),
             array(
                 'name' => 'Complaint',
@@ -34,7 +34,7 @@ class FeedbackSubjectSeeder extends Seeder
             ),
             array(
                 'name' => 'Bug',
-                'description' => 'Problem with the application/web site',
+                'description' => 'Problem with the application / web site',
             ),
         ));
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FeedbackSubject;
 use Illuminate\Http\Request;
 
 class FeedbackSubjectController extends Controller
@@ -14,7 +15,10 @@ class FeedbackSubjectController extends Controller
     public function index()
     {
         //
-        Return view('feedbackSubjects.index');
+        $allFeedbackSubjects = FeedbackSubject::all();
+        Return view('feedbackSubjects.index', [
+            'feedbackSubjects' => $allFeedbackSubjects
+        ]);
     }
 
     /**

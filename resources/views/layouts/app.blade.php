@@ -38,6 +38,11 @@
                                 {{__('Rates')}}
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/feedbackSubjects')}}">
+                                {{__('Feedback Subjects')}}
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
