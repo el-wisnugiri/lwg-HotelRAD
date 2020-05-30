@@ -18,7 +18,7 @@ class CreateRatesTable extends Migration
             $table->decimal('rate')->default(0.00);
             $table->text('description');
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

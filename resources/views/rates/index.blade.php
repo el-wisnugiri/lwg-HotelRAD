@@ -12,6 +12,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Rate</th>
                 <th scope="col">Description</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -20,6 +21,11 @@
                     <td>{{$rate->id}}</td>
                     <td>{{$rate->rate}}</td>
                     <td>{{$rate->description}}</td>
+                    <td>
+                        <a href="{{url("/rates/{$rate->id}")}}" class="btn btn-info">
+                            Show
+                        </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

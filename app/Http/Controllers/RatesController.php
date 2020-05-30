@@ -16,7 +16,9 @@ class RatesController extends Controller
     {
         //variable to store all existing the rates
         $allRates = Rate::all();
-        Return view('rates.index', ['rateTable' => $allRates]);
+        Return view('rates.index', [
+            'rateTable' => $allRates
+        ]);
     }
 
     /**
@@ -50,8 +52,11 @@ class RatesController extends Controller
      */
     public function show($id)
     {
-        //
-        Return view('rates.show');
+        // find the id of rates if its matches with the id that the user wants to show
+        $roomRates = Rate::find($id);
+        Return view('rates.show', [
+            'rates'=>$roomRates
+        ]);
     }
 
     /**
