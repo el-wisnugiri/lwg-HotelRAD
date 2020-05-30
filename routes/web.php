@@ -28,7 +28,7 @@ Route::get('/rates /{rates}', 'RatesController@show');
 Route::get('/rates /{rates} /edit', 'RatesController@edit');
 Route::put('/rates /{rates}', 'RatesController@update');
 Route::patch('/rates /{rates}', 'RatesController@update');
-Route::delete('/rates /{rates}', 'RatesController@delete');
+Route::delete('/rates /{rates}', 'RatesController@destroy');
 
 Auth::routes();
 

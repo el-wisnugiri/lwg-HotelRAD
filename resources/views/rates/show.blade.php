@@ -31,5 +31,23 @@
                 </tr>
             </tbody>
         </table>
+        <div>
+            <form action="/rates/{{$rates->id}}" method="post">
+                @csrf
+                @method('delete')
+
+                <a href="{{url("/rates")}}" class="btn btn-info">
+                    Back
+                </a>
+
+                <a href="{{url("/rates/{$rates->id}/edit")}}" class="btn btn-warning">
+                    Edit
+                </a>
+
+                <button type="submit" class="btn btn-danger">
+                    Delete
+                </button>
+            </form>
+        </div>
     </div>
 @endsection

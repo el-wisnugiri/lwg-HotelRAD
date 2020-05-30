@@ -29,12 +29,22 @@
                     <td>{{$rate->rate}}</td>
                     <td>{{$rate->description}}</td>
                     <td>
-                        <a href="{{url("/rates/{$rate->id}")}}" class="btn btn-info">
-                            Show
-                        </a>
-                        <a href="{{url("/rates/{$rate->id}/edit")}}" class="btn btn-warning">
-                            Edit
-                        </a>
+                        <form action="/rates/{{$rate->id}}" method="post">
+                            @csrf
+                            @method('delete')
+
+                            <a href="{{url("/rates/{$rate->id}")}}" class="btn btn-info">
+                                Show
+                            </a>
+
+                            <a href="{{url("/rates/{$rate->id}/edit")}}" class="btn btn-warning">
+                                Edit
+                            </a>
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
