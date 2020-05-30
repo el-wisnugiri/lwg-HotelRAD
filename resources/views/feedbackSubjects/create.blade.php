@@ -19,7 +19,7 @@
                        placeholder="Enter Feedback Subject here.."
                        value="">
                 <small id="feedbackSubjectHelp" class="form-text text-muted">
-                    Name can not be longer than 25 character
+                    Subject can not be longer than 25 character
                 </small>
             </div>
 

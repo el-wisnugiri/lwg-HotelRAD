@@ -119,6 +119,9 @@ class FeedbackSubjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $feedbackSubjects = FeedbackSubject::findOrFail($id);
+        $feedbackSubjects->delete();
+        Return redirect('/feedbackSubjects');
     }
 }

@@ -118,6 +118,7 @@ class RatesController extends Controller
      */
     public function destroy($id)
     {
+        // delete
         $roomRates = Rate::findOrFail($id);
         $roomRates->delete();
         Return redirect('/rates');
