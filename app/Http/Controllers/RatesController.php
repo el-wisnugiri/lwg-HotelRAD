@@ -39,6 +39,7 @@ class RatesController extends Controller
      */
     public function store(Request $request)
     {
+        // validate the input for rate and description
         request()->validate(
             [
                 'roomRate' => 'required',
@@ -93,6 +94,7 @@ class RatesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // validate the input for rate and description
         request()->validate(
             [
                 'roomRate' => ['required'],

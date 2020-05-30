@@ -15,7 +15,7 @@ class CreateFeedbackSubjectsTable extends Migration
     {
         Schema::create('feedback_subjects', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 24);
+            $table->string('subject', 24);
             $table->string('description', 255);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

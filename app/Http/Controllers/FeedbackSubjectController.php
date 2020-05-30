@@ -28,7 +28,7 @@ class FeedbackSubjectController extends Controller
      */
     public function create()
     {
-        //
+        // show the create view
         Return view('feedbackSubjects.create');
     }
 
@@ -40,7 +40,20 @@ class FeedbackSubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the input for subject and description
+        request()->validate(
+            [
+                'feedbackSubject' => ['required', 'max:25'],
+                'feedbackDescription' => ['required', 'min:4', 'max:255'],
+            ]
+        );
+
+        $feedbackSubjects = new FeedbackSubject();
+        $feedbackSubjects->subject = $request->feedbackSubject;
+        $feedbackSubjects->description = $request->feedbackDescription;
+        $feedbackSubjects->save();
+
+        return redirect('/feedbackSubjects')->with('success','Feedback Subjects created successfully.');
     }
 
     /**
@@ -66,7 +79,7 @@ class FeedbackSubjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        // find the id of feedback subjects if its matches with the id that the user wants to show
         $feedbackSubjects = FeedbackSubject::find($id);
         Return view('feedbackSubjects.update', [
             'feedbackSubjects'=>$feedbackSubjects
@@ -82,16 +95,16 @@ class FeedbackSubjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate the input for subject and description
         request()->validate(
             [
-                'feedbackName' => ['required', 'max:25'],
+                'feedbackSubject' => ['required', 'max:25'],
                 'feedbackDescription' => ['required', 'min:4', 'max:255'],
             ]
         );
         $feedbackSubjects = FeedbackSubject::find($id);
 
-        $feedbackSubjects->name = request('feedbackName');
+        $feedbackSubjects->subject = request('feedbackName');
         $feedbackSubjects->description = request('feedbackDescription');
         $feedbackSubjects->save();
 

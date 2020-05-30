@@ -13,12 +13,12 @@
             @method('patch')
 
             <div class="form-group">
-                <label for="feedbackName">Name</label>
-                <input type="text" id="feedbackName" name="feedbackName"
-                       class="form-control" aria-describedby="feedbackNameHelp"
-                       placeholder="Enter Feedback Name here.."
-                       value="{{$feedbackSubjects->name}}">
-                <small id="feedbackNameHelp" class="form-text text-muted">
+                <label for="feedbackSubject">Subject</label>
+                <input type="text" id="feedbackSubject" name="feedbackSubject"
+                       class="form-control" aria-describedby="feedbackSubjectHelp"
+                       placeholder="Enter Feedback Subject here.."
+                       value="{{$feedbackSubjects->subject}}">
+                <small id="feedbackSubjectHelp" class="form-text text-muted">
                     Name can not be longer than 25 character
                 </small>
             </div>

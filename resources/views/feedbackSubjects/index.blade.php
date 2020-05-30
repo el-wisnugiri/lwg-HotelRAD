@@ -17,7 +17,7 @@
             <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Name</th>
+                <th scope="col">Subject</th>
                 <th scope="col">Description</th>
                 <th>Actions</th>
             </tr>
@@ -26,7 +26,7 @@
             @foreach($feedbackSubjects as $feedback)
                 <tr>
                     <td>{{$feedback->id}}</td>
-                    <td>{{$feedback->name}}</td>
+                    <td>{{$feedback->subject}}</td>
                     <td>{{$feedback->description}}</td>
                     <td>
                         <form action="/feedbackSubjects/{{$feedback->id}}" method="post">

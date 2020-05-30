@@ -13,27 +13,27 @@ class FeedbackSubjectSeeder extends Seeder
     {
         DB::table('feedback_subjects')->insert(array(
             array(
-                'name' => 'General',
+                'subject' => 'General',
                 'description' => 'General Enquiry / Comments',
             ),
             array(
-                'name' => 'Booking',
+                'subject' => 'Booking',
                 'description' => 'Booking Enquiry / Room Availability',
             ),
             array(
-                'name' => 'Thank You',
+                'subject' => 'Thank You',
                 'description' => 'Message to thank the hotel / staff',
             ),
             array(
-                'name' => 'Complaint',
+                'subject' => 'Complaint',
                 'description' => 'Had a problem with your booking or stay',
             ),
             array(
-                'name' => 'Help',
+                'subject' => 'Help',
                 'description' => 'Assistance Required',
             ),
             array(
-                'name' => 'Bug',
+                'subject' => 'Bug',
                 'description' => 'Problem with the application / web site',
             ),
         ));

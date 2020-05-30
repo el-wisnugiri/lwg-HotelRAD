@@ -14,8 +14,8 @@
                 <td>{{$feedbackSubjects->id}}</td>
             <tr>
             <tr>
-                <th scope="col" class="text-primary">Rate</th>
-                <td>{{$feedbackSubjects->name}}</td>
+                <th scope="col" class="text-primary">Subject</th>
+                <td>{{$feedbackSubjects->subject}}</td>
             <tr>
             <tr>
                 <th scope="col" class="text-primary">Description</th>
