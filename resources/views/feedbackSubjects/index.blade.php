@@ -33,7 +33,7 @@
                             @csrf
                             @method('delete')
 
-                            <a href="{{url("/feedbackSubjects/$feedback->id}")}}" class="btn btn-info">
+                            <a href="{{url("/feedbackSubjects/{$feedback->id}")}}" class="btn btn-info">
                                 Show
                             </a>
 

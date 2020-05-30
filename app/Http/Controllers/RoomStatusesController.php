@@ -51,8 +51,11 @@ class RoomStatusesController extends Controller
      */
     public function show($id)
     {
-        //
-        Return view('roomStatuses.show');
+        // find the id of room Statuses if its matches with the id that the user wants to show
+        $roomStatuses = RoomStatuses::find($id);
+        Return view('roomStatuses.show', [
+            'roomStatus'=>$roomStatuses
+        ]);
     }
 
     /**

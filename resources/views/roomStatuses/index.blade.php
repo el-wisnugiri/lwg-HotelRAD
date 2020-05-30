@@ -34,11 +34,11 @@
                                 @csrf
                                 @method('delete')
 
-                                <a href="{{url("/roomStatuses/{{$roomStatus->id}")}}" class="btn btn-info">
+                                <a href="{{url("/roomStatuses/{$roomStatus->id}")}}" class="btn btn-info">
                                     Show
                                 </a>
 
-                                <a href="{{url("/roomStatuses/{{$roomStatus->id}/edit")}}" class="btn btn-warning">
+                                <a href="{{url("/roomStatuses/{$roomStatus->id}/edit")}}" class="btn btn-warning">
                                     Edit
                                 </a>
 
