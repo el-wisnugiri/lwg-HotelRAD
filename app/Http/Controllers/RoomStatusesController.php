@@ -28,7 +28,7 @@ class RoomStatusesController extends Controller
      */
     public function create()
     {
-        //
+        // show the create view tabs
         Return view('roomStatuses.create');
     }
 
@@ -40,7 +40,20 @@ class RoomStatusesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate the input for name and description
+        request()->validate(
+            [
+                'roomStatusName' => ['required', 'max:16'],
+                'roomStatusDescription' => ['required', 'min:4', 'max:255'],
+            ]
+        );
+
+        $roomStatuses = new RoomStatuses();
+        $roomStatuses->name = $request->roomStatusName;
+        $roomStatuses->description = $request->roomStatusDescription;
+        $roomStatuses->save();
+
+        return redirect('/roomStatuses')->with('success','Room Statuses created successfully.');
     }
 
     /**
@@ -82,7 +95,7 @@ class RoomStatusesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // validate the input for subject and description
+        // validate the input for name and description
         request()->validate(
             [
                 'roomStatusName' => ['required', 'max:16'],

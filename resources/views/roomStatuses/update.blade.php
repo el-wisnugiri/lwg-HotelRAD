@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Feedback Subjects : Edit</h2>
+        <h2>Room Statuses : Edit</h2>
 
         <form action="/roomStatuses/{{$roomStatus->id}}" method="post">
             @csrf
