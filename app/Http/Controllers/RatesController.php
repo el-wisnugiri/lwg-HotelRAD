@@ -40,8 +40,19 @@ class RatesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate(
+            [
+                'roomRate' => ['required', 'number' ],
+                'roomRateDescription' => ['required', 'min:4', 'max:128'],
+            ]
+        );
 
+        $roomRates = new Rate();
+        $roomRates->rate = $request->roomRate;
+        $roomRates->description = $request->roomRateDescription;
+        $roomRates->save();
+
+        return redirect('/rates');
     }
 
     /**
@@ -67,8 +78,11 @@ class RatesController extends Controller
      */
     public function edit($id)
     {
-        //
-        Return view('rates.edit');
+        // find the id of rates if its matches with the id that the user wants to edit
+        $roomRates = Rate::find($id);
+        Return view('rates.update',[
+            'rates'=>$roomRates
+        ]);
     }
 
     /**
@@ -80,7 +94,19 @@ class RatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        request()->validate(
+            [
+                'roomRate' => ['required'],
+                'roomRateDescription' => ['required', 'min:4', 'max:128'],
+            ]
+        );
+        $roomRates = Rate::find($id);
+
+        $roomRates->rate = request('roomRate');
+        $roomRates->description = request('roomRateDescription');
+        $roomRates->save();
+
+        return redirect('/rates/'.$id);
     }
 
     /**

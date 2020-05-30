@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="container">
+        <h1 class="text-center">Browse Rates</h1>
         <table class="table">
             <thead>
             <tr>
@@ -24,6 +25,9 @@
                     <td>
                         <a href="{{url("/rates/{$rate->id}")}}" class="btn btn-info">
                             Show
+                        </a>
+                        <a href="{{url("/rates/{$rate->id}/edit")}}" class="btn btn-warning">
+                            Edit
                         </a>
                     </td>
                 </tr>

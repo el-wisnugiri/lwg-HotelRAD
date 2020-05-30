@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="container">
+        <h2>Room Rates : Show</h2>
         <table class="table">
             <tbody>
                 <tr>
