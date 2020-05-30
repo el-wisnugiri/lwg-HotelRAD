@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rate;
 use Illuminate\Http\Request;
 
 class RatesController extends Controller
@@ -13,8 +14,9 @@ class RatesController extends Controller
      */
     public function index()
     {
-        //
-        Return view('rates.index');
+        //variable to store all existing the rates
+        $allRates = Rate::all();
+        Return view('rates.index', ['rateTable' => $allRates]);
     }
 
     /**
