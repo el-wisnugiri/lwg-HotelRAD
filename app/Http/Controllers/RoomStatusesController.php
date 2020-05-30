@@ -66,8 +66,11 @@ class RoomStatusesController extends Controller
      */
     public function edit($id)
     {
-        //
-        Return view('roomStatuses.update');
+        // find the id of room Statuses if its matches with the id that the user wants to update
+        $roomStatuses = RoomStatuses::find($id);
+        Return view('roomStatuses.update', [
+            'roomStatus'=>$roomStatuses
+        ]);
     }
 
     /**
@@ -79,7 +82,20 @@ class RoomStatusesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate the input for subject and description
+        request()->validate(
+            [
+                'roomStatusName' => ['required', 'max:16'],
+                'roomStatusDescription' => ['required', 'min:4', 'max:255'],
+            ]
+        );
+        $roomStatuses = RoomStatuses::find($id);
+
+        $roomStatuses->name = request('roomStatusName');
+        $roomStatuses->description = request('roomStatusDescription');
+        $roomStatuses->save();
+
+        return redirect('/roomStatuses/'.$id)->with('success','roomStatuses updated successfully.');
     }
 
     /**

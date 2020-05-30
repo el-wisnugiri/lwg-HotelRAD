@@ -54,11 +54,11 @@ Route::resource('/roomStatuses', 'RoomStatusesController');
 Route::get('/roomStatuses', 'RoomStatusesController@index')->name('home');
 Route::post('/roomStatuses', 'RoomStatusesController@store');
 Route::get('/roomStatuses /create', 'RoomStatusesController@create');
-Route::get('/roomStatuses /{roomstatuses}', 'RoomStatusesController@show');
-Route::get('/roomStatuses /{roomstatuses} /edit', 'RoomStatusesController@edit');
-Route::put('/roomStatuses /{roomstatuses}', 'RoomStatusesController@update');
-Route::patch('/roomStatuses /{roomstatuses}', 'RoomStatusesController@update');
-Route::delete('/roomStatuses /{roomstatuses}', 'RoomStatusesController@destroy');
+Route::get('/roomStatuses /{roomStatuses}', 'RoomStatusesController@show');
+Route::get('/roomStatuses /{roomStatuses} /edit', 'RoomStatusesController@edit');
+Route::put('/roomStatuses /{roomStatuses}', 'RoomStatusesController@update');
+Route::patch('/roomStatuses /{roomStatuses}', 'RoomStatusesController@update');
+Route::delete('/roomStatuses /{roomStatuses}', 'RoomStatusesController@destroy');
 
 Auth::routes();
 

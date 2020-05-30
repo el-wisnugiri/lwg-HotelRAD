@@ -104,7 +104,7 @@ class FeedbackSubjectController extends Controller
         );
         $feedbackSubjects = FeedbackSubject::find($id);
 
-        $feedbackSubjects->subject = request('feedbackName');
+        $feedbackSubjects->subject = request('feedbackSubject');
         $feedbackSubjects->description = request('feedbackDescription');
         $feedbackSubjects->save();
 
