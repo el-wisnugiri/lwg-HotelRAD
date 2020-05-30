@@ -67,7 +67,10 @@ class FeedbackSubjectController extends Controller
     public function edit($id)
     {
         //
-        Return view('feedbackSubjects.edit');
+        $feedbackSubjects = FeedbackSubject::find($id);
+        Return view('feedbackSubjects.update', [
+            'feedbackSubjects'=>$feedbackSubjects
+        ]);
     }
 
     /**
@@ -80,6 +83,19 @@ class FeedbackSubjectController extends Controller
     public function update(Request $request, $id)
     {
         //
+        request()->validate(
+            [
+                'feedbackName' => ['required', 'max:25'],
+                'feedbackDescription' => ['required', 'min:4', 'max:255'],
+            ]
+        );
+        $feedbackSubjects = FeedbackSubject::find($id);
+
+        $feedbackSubjects->name = request('feedbackName');
+        $feedbackSubjects->description = request('feedbackDescription');
+        $feedbackSubjects->save();
+
+        return redirect('/feedbackSubjects/'.$id)->with('success','Feedback Subjects updated successfully.');
     }
 
     /**
