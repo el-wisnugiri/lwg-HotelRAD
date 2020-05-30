@@ -43,6 +43,11 @@
                                 {{__('Feedback Subjects')}}
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/roomStatuses')}}">
+                                {{__('Room Statuses')}}
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

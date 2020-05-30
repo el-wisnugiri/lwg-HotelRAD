@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\RoomStatuses;
 use Illuminate\Http\Request;
 
 class RoomStatusesController extends Controller
@@ -14,7 +15,10 @@ class RoomStatusesController extends Controller
     public function index()
     {
         // show all data from room statuses
-        Return view('roomStatuses.index');
+        $allRoomStatuses = RoomStatuses::all();
+        Return view('roomStatuses.index', [
+            'roomStatuses'=>$allRoomStatuses
+        ]);
     }
 
     /**
