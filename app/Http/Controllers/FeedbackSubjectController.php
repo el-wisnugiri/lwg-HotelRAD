@@ -14,7 +14,7 @@ class FeedbackSubjectController extends Controller
      */
     public function index()
     {
-        //
+        // show all items inside Feedback Subject Database
         $allFeedbackSubjects = FeedbackSubject::all();
         Return view('feedbackSubjects.index', [
             'feedbackSubjects' => $allFeedbackSubjects
@@ -51,8 +51,11 @@ class FeedbackSubjectController extends Controller
      */
     public function show($id)
     {
-        //
-        Return view('feedbackSubjects.show');
+        // find the id of feedback subjects if its matches with the id that the user wants to show
+        $feedbackSubjects = FeedbackSubject::find($id);
+        Return view('feedbackSubjects.show', [
+            'feedbackSubjects'=>$feedbackSubjects
+        ]);
     }
 
     /**

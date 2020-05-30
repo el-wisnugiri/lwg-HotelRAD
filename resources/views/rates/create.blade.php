@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="roomRate">Rate</label>
+                    <label for="roomRate">Description</label>
                     <input type="text" id="roomRateDescription" name="roomRateDescription"
                            class="form-control" aria-describedby="roomRateDescriptionHelp"
                            placeholder="Enter Description here.."

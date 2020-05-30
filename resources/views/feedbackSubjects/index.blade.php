@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Rates: Browse
+    Feedback Subjects: Browse
 @endsection
 
 @section('content')
@@ -29,13 +29,22 @@
                     <td>{{$feedback->name}}</td>
                     <td>{{$feedback->description}}</td>
                     <td>
-                        <a href="{{url("/feedbackSubjects/{$feedback->id}")}}" class="btn btn-info">
-                                Show
-                        </a>
+                        <form action="/feedbackSubjects/{{$feedback->id}}" method="post">
+                            @csrf
+                            @method('delete')
 
-                        <a href="{{url("/feedbackSubjects/{$feedback->id}/edit")}}" class="btn btn-warning">
+                            <a href="{{url("/feedbackSubjects/$feedback->id}")}}" class="btn btn-info">
+                                Show
+                            </a>
+
+                            <a href="{{url("/feedbackSubjects/{$feedback->id}/edit")}}" class="btn btn-warning">
                                 Edit
-                        </a>
+                            </a>
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
