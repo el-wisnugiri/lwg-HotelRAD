@@ -28,7 +28,6 @@ class RatesController extends Controller
      */
     public function create()
     {
-        //
         Return view('rates.create');
     }
 
@@ -42,7 +41,7 @@ class RatesController extends Controller
     {
         request()->validate(
             [
-                'roomRate' => ['required', 'number' ],
+                'roomRate' => 'required',
                 'roomRateDescription' => ['required', 'min:4', 'max:128'],
             ]
         );
@@ -52,7 +51,7 @@ class RatesController extends Controller
         $roomRates->description = $request->roomRateDescription;
         $roomRates->save();
 
-        return redirect('/rates');
+        return redirect('/rates')->with('success','Rates created successfully.');
     }
 
     /**
@@ -106,7 +105,7 @@ class RatesController extends Controller
         $roomRates->description = request('roomRateDescription');
         $roomRates->save();
 
-        return redirect('/rates/'.$id);
+        return redirect('/rates/'.$id)->with('success','Rates updated successfully.');
     }
 
     /**
@@ -117,7 +116,6 @@ class RatesController extends Controller
      */
     public function destroy($id)
     {
-        //
         Return view('rates.destroy');
     }
 }

@@ -7,6 +7,12 @@
 @section('content')
     <div class="container">
         <h1 class="text-center">Browse Rates</h1>
+        <div class="mt-3 mb-3">
+            <a href="{{url("/rates/create")}}" class="btn btn-success">
+                Create
+            </a>
+        </div>
+
         <table class="table">
             <thead>
             <tr>
